@@ -9,7 +9,7 @@ This is a solution to connect anyone with an online conference room by room name
 
 #### 1. Clone or download the zip of the project,
 #### 2. Install [Node.js](http://nodejs.org) 
-#### 3. Open CMD or Terminal and navigate to the unziped folder
+#### 3. Open CMD or Terminal and navigate to the unzipped folder
 ```shell
 cd path
 ```
