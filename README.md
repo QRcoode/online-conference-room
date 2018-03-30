@@ -1,31 +1,29 @@
 # Online Conference Room Project
 
 
-This is a solution to connect anyone over an online conference room by room name or room ID room name.
+This is a solution to connect anyone with an online conference room by room name or room ID room name.
 
 
 
 ## Setup
 
-#### Download
-
-Clone or download the zip of the project,
-
-#### Install [Node.js](http://nodejs.org) 
-
-Command Line:
-
+#### 1. Clone or download the zip of the project,
+#### 2. Install [Node.js](http://nodejs.org) 
+#### 3. Open CMD or Terminal and navigate to the unziped folder
+```shell
+cd path
+```
+#### 4.  Install dependencies in cmd / terminal
 ```shell
 npm install
 ```
-
-## Usage
+#### 4.  Run it
 
 ```shell
 node app.js
 ```
 
-- This should start your chat app at https://localhost:5000/
+- This should start your chat app at https://localhost:5000/ (It's https, not just http)
 - Any two users can chat over https://localhost:5000/any+room+name
 
-## Demo [Heroku App](https://hardeep-rooms.herokuapp.com)
+## A Demo can be viewed [here](https://hardeep-rooms.herokuapp.com)
