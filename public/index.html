@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create / Join a room</title>
+    <link rel="stylesheet" href="./styles/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="./styles/home/main.css">
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script src="./scripts/bootstrap.min.js" ></script>
+    
+
+</head>
+
+<body>
+    <div class="container main-container">
+            <div class="row">
+                <div class="col text-center">
+                        <input type="text" placeholder="Room ID" class="room-id"/>
+                        <button class="join-btn btn btn-primary">Join</button>
+                </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+        $( document).ready(function() {
+            $('.join-btn').click(function(){
+                var room = $('.room-id').val().trim();
+                if( room != '' )
+                    location.href = "/"+room;
+            });
+        });
+    </script>
+</body>
+
+</html>

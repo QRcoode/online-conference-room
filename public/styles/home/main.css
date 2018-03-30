@@ -1,0 +1,10 @@
+/*--- home page ---*/
+
+.room-join-form{max-width: 600px; position: absolute;margin:0 auto;}
+.main-container{margin-top:15%;}
+.room-id{border:0px;border-bottom:2px solid #3c3c3c;max-width: 400px;width: 100%;color:#3c3c3c;padding: 5px; margin-bottom: 25px;}
+.join-btn{width: 100px;margin: 0 10px;}
+
+
+/*--- room page ---*/
+#remote-video{ position: fixed;bottom: 0%; margin-bottom: 230px;left: 60%;}
