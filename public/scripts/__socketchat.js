@@ -158,8 +158,6 @@ $(window).load(function(){
 		console.log('User available for offer is ---> '+JSON.stringify(data));
 		$('#first-speaker').html(data[0]);
 		$('#second-speaker').html('with '+data[1]);
-		//added
-		$('#second-speaker').html('with '+data[2]);
 	});
 
 	socket.on('disconnected-user-reset',function(){
@@ -316,7 +314,6 @@ $(window).load(function(){
 
 function addRemoteVideo(top, height, stream)
 {
-	console.log('adding remote video');
 	if(!socket.screenSharedByRemote && !socket.screenShared)
 	{
 		console.log('INSIDE addRemoteVideo...width is '+main_width);
@@ -328,14 +325,29 @@ function addRemoteVideo(top, height, stream)
 			'width': 190,
 			'left': left
 			}).hide();
+		//-- add remote 2 
+		$('#remote-video-2').append($('#my-video'));
+		$('#remote-video-2').find('video').eq(0).addClass('remote-video-right').css({
+			'position': 'absolute',
+			'height': 150,
+			'width': 190,
+			'left': left
+			}).hide();
+		//-- add remote 2 
 		$('#local-video').prepend('<video autoplay style="width: '+main_width+'"></video>');
 		$('#local-video').find('video')[0].src=stream;
 		$('#remote-video').find('video')[0].play();
+		//-- add remote 2 
+		$('#remote-video-2').find('video')[0].play();
+		//-- add remote 2 
 		globalVideo = $('#local-video').find('video')[0];
 		setTimeout(function(){
 			removeBlackOverlay();
 			enableTextarea();
 			$('#remote-video').find('video').eq(0).show().addClass('animated fadeInLeft');
+			//-- add remote 2 
+			$('#remote-video-2').find('video').eq(0).show().addClass('animated fadeInLeft');
+			//-- add remote 2 
 		},2000);
 	}
 	else if(socket.screenSharedByRemote)
@@ -367,6 +379,11 @@ function removeRemoteVideo()
 		$('#local-video').find('video').remove();
 		$('#local-video').prepend($('#remote-video').find('video').eq(0).removeClass('remote-video-right').css({'position': 'absolute','height': 'auto', 'width': main_width, 'left': 0}));
 		$('#remote-video').find('video').remove();
+		//-- add remote 2 
+		$('#local-video').prepend($('#remote-video-2').find('video').eq(0).removeClass('remote-video-right').css({'position': 'absolute','height': 'auto', 'width': main_width, 'left': 0}));
+		$('#remote-video-2').find('video').remove();
+		//-- add remote 2 
+		
 		$('#local-video').find('video')[0].play();	
 		globalVideo = $('#local-video').find('video')[0];
 		globalStream = localStream;
@@ -388,6 +405,10 @@ function removeRemoteVideo()
 		//NOW doing the first if condition things...
 		$('#local-video').prepend($('#remote-video').find('video').eq(0).removeClass('remote-video-right').css({'position': 'absolute','height': 'auto', 'width': main_width, 'left': 0}));
 		$('#remote-video').find('video').remove();
+		//--- add remote 2
+		$('#local-video').prepend($('#remote-video-2').find('video').eq(0).removeClass('remote-video-right').css({'position': 'absolute','height': 'auto', 'width': main_width, 'left': 0}));
+		$('#remote-video-2').find('video').remove();
+		//--- add remote 2
 		$('#local-video').find('video')[0].play();	
 		//ENDS--
 		setTimeout(function(){
